@@ -127,22 +127,27 @@ struct {
 #else
 	// For PiGRRL 2:
 	// Input   Output (from /usr/include/linux/input.h)
-	{   4,     KEY_LEFT     }, // Joystick (4 pins)
-	{  19,     KEY_RIGHT    },
-	{  16,     KEY_UP       },
-	{  26,     KEY_DOWN     },
-	{  14,     KEY_LEFTCTRL }, // A/Fire/jump/primary/RED
-	{  15,     KEY_LEFTALT  }, // B/Bomb/secondary/YELLOW
-	{  20,     KEY_Z        }, // X/BLUE
-	{  18,     KEY_X        }, // Y/GREEN
-	{   5,     KEY_SPACE    }, // Select
-	{   6,     KEY_ENTER    }, // Start
-	{  12,     KEY_A        }, // L Shoulder
-	{  13,     KEY_S        }, // R Shoulder
-	{  17,     KEY_ESC      }, // Exit ROM PiTFT Button 1
-	{  22,     KEY_1        }, // PiTFT Button 2
-	{  23,     KEY_2        }, // PiTFT Button 3
-	{  27,     KEY_3        }, // PiTFT Button 4
+	// Player1
+	{   2,     KEY_UP        }, // Joystick (4 pins)
+	{   3,     KEY_DOWN      },
+	{   4,     KEY_LEFT      },
+	{  14,     KEY_RIGHT     },
+	{  15,     KEY_1         }, // MAME start1
+	{  18,     KEY_LEFTCTRL  }, // A/Fire/jump/primary/RED
+	{  17,     KEY_LEFTALT   }, // B/Bomb/secondary/YELLOW
+	{  27,     KEY_SPACE     }, // X/BLUE
+	{  22,     KEY_LEFTSHIFT }, // Y/GREEN
+	{  23,     KEY_5         }, // MAME credit1
+	// Player2
+	{  24,     KEY_R         }, // Joystick (4 pins)
+	{  10,     KEY_F         },
+	{   9,     KEY_D         },
+	{  11,     KEY_G         },
+	{  25,     KEY_2         }, // MAME start1
+	{   8,     KEY_A         }, // A/Fire/jump/primary/RED
+	{   7,     KEY_S         }, // B/Bomb/secondary/YELLOW
+	{   5,     KEY_Q         }, // X/BLUE
+	{  12,     KEY_W         }, // Y/GREEN
 #endif
 	{  -1,     -1           } }; // END OF LIST, DO NOT CHANGE
 
@@ -173,7 +178,7 @@ char
 volatile unsigned int
   *gpio;                             // GPIO register table
 const int
-   debounceTime = 20;                // 20 ms for button debouncing
+   debounceTime = 10;                // 10 ms for button debouncing
 
 
 // Some utility functions ------------------------------------------------
